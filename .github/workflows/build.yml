@@ -23,12 +23,16 @@ jobs:
       
       - name: Build executable
         run: pyinstaller --onefile --name WinProgramLister app.py
+      - name: executa o arquivo spec
+        run: pyinstaller WinProgramLister.spec
+        
       - name: Listar conteúdo do diretório
         run: dir
 
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
+          files: WinProgramLister.exe
           tag_name: 'release'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
