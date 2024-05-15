@@ -23,16 +23,14 @@ jobs:
       
       - name: Build executable
         run: pyinstaller --onefile --name WinProgramLister app.py
-      - name: executa o arquivo spec
-        run: pyinstaller WinProgramLister.spec
-
+      
       - name: create release
         id: create_release
         uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: new_release
+          tag_name: Release
           overwrite: true
           body: |
             Release v1.0.0
