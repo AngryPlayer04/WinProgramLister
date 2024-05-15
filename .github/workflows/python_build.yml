@@ -2,7 +2,7 @@ name: Build and Release
 on:
   push:
     tags:
-      - 'v*.*.*' # Ajuste este padrão conforme necessário
+      - 'v*.*' # Ajuste este padrão conforme necessário
 jobs:
   build:
     runs-on: ubuntu-latest
