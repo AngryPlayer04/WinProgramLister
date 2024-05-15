@@ -25,15 +25,30 @@ jobs:
         run: pyinstaller --onefile --name WinProgramLister app.py
       - name: executa o arquivo spec
         run: pyinstaller WinProgramLister.spec
+
+      - name: create release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.event.head_commit.message }}
+          release_name: ${{ github.event.head_commit.message }}
+          overwrite: true
+          body: |
+            Release v1.0.0
+          draft: false
+          prerelease: false
       
       - name: Release
         uses: actions/upload-release-asset@v1
         with:
           #files: D:\a\WinProgramLister\WinProgramLister\dist\
+          upload_url: ${{ steps.create_release.outputs.upload_url}}
           asset_path: dist\WinProgramLister.exe
           asset_name: WinProgramLister.exe
           asset_content_type: application/zip
-          tag_name: 'release'
+          
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           
