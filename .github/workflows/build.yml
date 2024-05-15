@@ -1,10 +1,8 @@
 
 name: Build Python Executable
 
-on: 
-  push:
-    tags:
-        - 'v*.*.*'
+on: [push]
+  
 
 jobs:
   build:
@@ -31,6 +29,7 @@ jobs:
         with:
           files: |
             WinProgramLister.exe
+          tag_name: 'release'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           
