@@ -27,7 +27,7 @@ jobs:
         run: pyinstaller WinProgramLister.spec
         
       - name: Listar conteúdo do diretório
-        run: dir
+        run: dir dists
 
       - name: Release
         uses: softprops/action-gh-release@v1
