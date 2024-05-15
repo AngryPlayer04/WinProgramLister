@@ -14,11 +14,10 @@ def mostrar_programas_gui(programas):
         
         webbrowser.open_new_tab('lista_programas.html')
 
-    icone = 'icone.ico'
-
+    
     root = Tk()
     root.title("WinProgramLister - by Cassio Nhiemetz")
-    root.iconbitmap(icone)
+    root.iconbitmap("icone.ico")
     frame = Frame(root)
     frame.pack()
 
