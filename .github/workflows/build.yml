@@ -28,7 +28,7 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           files: |
-            WinProgramLister.exe
+            WinProgramLister
           tag_name: 'release'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
