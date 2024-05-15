@@ -1,0 +1,30 @@
+
+name: Build Python Executable
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+      
+      - name: Install dependencies
+        run: |
+          pip install pyinstaller
+      
+      - name: Build executable
+        run: pyinstaller --onefile --name WinProgramLister app.py
+
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: |
+            WinProgramLister.exe
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
