@@ -24,7 +24,7 @@ jobs:
       - name: Build executable
         run: pyinstaller --onefile --name WinProgramLister app.py
       - name: Listar conteúdo do diretório
-        run: ls -la
+        run: dir
 
       - name: Release
         uses: softprops/action-gh-release@v1
