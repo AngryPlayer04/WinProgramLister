@@ -25,14 +25,14 @@ jobs:
         run: pyinstaller --onefile --name WinProgramLister app.py
       - name: executa o arquivo spec
         run: pyinstaller WinProgramLister.spec
-      - name: lista os diretorios
-        run: |
-          dir 
-          dir dist
+      
       - name: Release
-        uses: softprops/action-gh-release@v1
+        uses: actions/upload-release-asset@v1
         with:
-          files: D:\a\WinProgramLister\WinProgramLister\dist\WinProgramLister.exe
+          #files: D:\a\WinProgramLister\WinProgramLister\dist\
+          asset_path: dist\WinProgramLister.exe
+          asset_name: WinProgramLister.exe
+          asset_content_type: application/zip
           tag_name: 'release'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
