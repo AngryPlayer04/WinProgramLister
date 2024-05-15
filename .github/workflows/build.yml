@@ -30,10 +30,10 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: Release v1
+          tag_name: Release_je
           overwrite: true
           body: |
-            Release v1.0.0
+            Release 
           draft: false
           prerelease: false
       
