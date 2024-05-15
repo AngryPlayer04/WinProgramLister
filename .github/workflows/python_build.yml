@@ -1,31 +1,24 @@
-name: Build and Release
+
 on:
-  push:
-    tags:
-      - 'v*.*' # Ajuste este padrão conforme necessário
+  release:
+    types: [created]
+name: Handle Release
 jobs:
-  build:
+  generate:
+    name: Create release-artifacts
     runs-on: windows-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      
-      - name: Set up Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: '3.x'
-      
+      - name: Checkout the repository
+        uses: actions/checkout@master
       - name: Install dependencies
         run: |
           pip install pyinstaller
       
       - name: Build executable
-        run: pyinstaller --onefile --name winprogramlister app.py
-      
-      - name: Release
-        uses: softprops/action-gh-release@v1
-        with:
-          files: |
-            winprogramlister.exe
+        run: pyinstaller --onefile --name WinProgramLister app.py
+      - name: Upload the artifacts
+        uses: skx/github-action-publish-binaries@master
         env:
-          GITHUB_TOKEN: ${{ secrets.Token_winapp }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          args: '-V*.*'
