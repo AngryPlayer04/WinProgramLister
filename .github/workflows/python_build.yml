@@ -1,12 +1,14 @@
-name: Build Python Executable
-
-on: [push]
-
+name: Build and Release
+on:
+  push:
+    tags:
+      - 'v*.*.*' # Ajuste este padrão conforme necessário
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v2
       
       - name: Set up Python
         uses: actions/setup-python@v2
@@ -20,3 +22,12 @@ jobs:
       
       - name: Build executable
         run: pyinstaller --onefile --name winprogramlister app.py
+      
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: |
+            
+            winprogramlister.exe
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
