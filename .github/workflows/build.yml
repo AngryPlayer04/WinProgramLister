@@ -25,6 +25,11 @@ jobs:
         run: pyinstaller --onefile --name WinProgramLister app.py
       - name: executa o arquivo spec
         run: pyinstaller WinProgramLister.spec
+      - name: lista o diretorio
+        run: |
+          dir
+          dir dist
+          dir build
 
       - name: move o exe
         run: move dist\WinProgramLister.exe.
