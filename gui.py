@@ -17,7 +17,8 @@ def mostrar_programas_gui(programas):
     
     root = Tk()
     root.title("WinProgramLister - by Cassio Nhiemetz")
-    root.iconbitmap("icone.ico")
+    
+    #root.iconbitmap("icone.ico")
     frame = Frame(root)
     frame.pack()
 
