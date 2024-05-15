@@ -32,7 +32,7 @@ jobs:
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
-          files: WinProgramLister.exe
+          files: D:\a\WinProgramLister\WinProgramLister\dist\WinProgramLister.exe
           tag_name: 'release'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
