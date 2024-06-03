@@ -38,4 +38,4 @@ Se você gostaria de contribuir com o desenvolvimento do WinProgramLister, siga 
 
 ### Licença
 
-Este projeto está licenciado sob a [Licença GPL-3.0](https://github.com/AngryPlayer04/WinProgramLister/blob/main/LICENSE).
+Este projeto está licenciado sob a [Licença GPL-3.0](/LICENSE).
