@@ -39,6 +39,6 @@ If you would like to contribute to the development of WinProgramLister, follow t
  4. Push to the branch.
  5. Submit a Pull Request.
 
-License
+### License
 
 This project is licensed under the [GPL-3.0 License](/LICENSE).
