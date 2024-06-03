@@ -41,4 +41,4 @@ If you would like to contribute to the development of WinProgramLister, follow t
 
 License
 
-This project is licensed under the [GPL-3.0 License](https://github.com/AngryPlayer04/WinProgramLister/blob/main/LICENSE).
+This project is licensed under the [GPL-3.0 License](/LICENSE).
