@@ -16,7 +16,7 @@
 
 ### Instalação
 
-1. Baixe o **WinProgramLister** na página de versões do GitHub.
+1. Baixe o **WinProgramLister** na página de [versões](https://github.com/AngryPlayer04/WinProgramLister/releases) do GitHub.
 2. Execute o exe. **Aparecerá um prompt dizendo que o programa não é confiável, basta clicar em leia mais e `executar mesmo assim`**.
 3. Se preferir, você pode baixar o arquivo zip e apenas executar o arquivo `app.py`.
 
