@@ -19,7 +19,7 @@ Versão em [Português](/READMEpt.md)
 
 ### Installation
 
-1. Download the **WinProgramLister** from the GitHub releases page.
+1. Download the **WinProgramLister** from the GitHub [releases](https://github.com/AngryPlayer04/WinProgramLister/releases) page.
 2. Run the exe. **A prompt will appear saying that the program is not trusted, just click on read more and `execute anyway`**.
 3. If you prefer, you can download a zip file and just run the `app.py` file.
 
